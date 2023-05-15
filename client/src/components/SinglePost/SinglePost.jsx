@@ -11,7 +11,7 @@ const SinglePost = () => {
   const location = useLocation();
   const path = location.pathname.split("/")[2];
   const [post, setPost] = useState({});
-  const PF = "https://mern-blog-6hv6.onrender.com/images/";
+  const PF = "https://mern-blog-6hv6.onrender.com/api/images/";
   const { user } = useContext(Context);
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
