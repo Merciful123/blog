@@ -7,11 +7,12 @@ import { useLocation } from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "../../context/Context";
 import axios from "axios";
+import { requrl } from "../../utils/config";
 const SinglePost = () => {
   const location = useLocation();
   const path = location.pathname.split("/")[2];
   const [post, setPost] = useState({});
-  const PF = "https://mern-blog-6hv6.onrender.com/api/images/";
+  const PF = `${requrl}/api/images/`;
   const { user } = useContext(Context);
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");

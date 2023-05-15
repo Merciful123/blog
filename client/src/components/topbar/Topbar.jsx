@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 // import peace from "../../asset/images/peace.jfif";
 import { useContext } from "react";
 import { Context } from "../../context/Context";
+import { requrl } from "../../utils/config";
 const Topbar = () => {
   const { user, dispatch } = useContext(Context);
-  const PF = "https://mern-blog-6hv6.onrender.com/api/images/";
+  const PF = `${requrl}/api/images/`;
   // console.log(user)
 
   const handleLogout = () => {

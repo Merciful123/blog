@@ -3,6 +3,7 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import axios from "axios";
 import { Context } from "../../context/Context";
 import "./setting.css";
+import { requrl } from "../../utils/config";
 // import peace from "../../asset/images/2.jpg";
 
 const Setting = () => {
@@ -13,7 +14,7 @@ const Setting = () => {
   const [success, setSuccess] = useState(false);
 
   const { user, dispatch } = useContext(Context);
-  const PF = "https://mern-blog-6hv6.onrender.com/api/images/";
+  const PF = `${requrl}/api/images/`;
   const handleSubmit = async (e) => {
     dispatch({ type: "UPDATE_START" });
     e.preventDefault();

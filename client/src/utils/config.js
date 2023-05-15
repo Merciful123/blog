@@ -1,0 +1,1 @@
+export const requrl = "https://mern-blog-6hv6.onrender.com";
