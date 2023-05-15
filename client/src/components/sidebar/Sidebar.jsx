@@ -2,19 +2,19 @@ import "./sidebar.css";
 // import peace from "../../images/pic.webp";
 import { useEffect, useState } from "react";
 
-import { Link } from "react-router-dom";
-import axios from "axios";
+// import { Link } from "react-router-dom";
+// import axios from "axios";
 
 const Sidebar = () => {
-  const [cats, setCat] = useState([]);
+  // const [cats, setCat] = useState([]);
 
-  useEffect(() => {
-    const getCats = async () => {
-      const res = await axios.get("/categories");
-      setCat(res.data);
-    };
-    getCats();
-  }, []);
+  // useEffect(() => {
+  //   const getCats = async () => {
+  //     const res = await axios.get("/categories");
+  //     setCat(res.data);
+  //   };
+  //   getCats();
+  // }, []);
   return (
     <div className="sidebar">
       <div className="sidebarItem">
