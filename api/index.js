@@ -41,11 +41,10 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
   res.status(200).json("file has been uploaded...");
 });
 
-const url = "https://mern-blog-6hv6.onrender.com/";
-app.use(`${url}/api/auth`, authRoute);
-app.use(`${url}/api/users`, userRoute);
-app.use(`${url}/api/posts`, postRoute);
-app.use(`${url}/api/categories`, categoryRoute);
+app.use("/api/auth", authRoute);
+app.use("/api/users", userRoute);
+app.use("/api/posts", postRoute);
+app.use("/api/categories", categoryRoute);
 
 // if (process.env.NODE_ENV === "production") {
 //   app.use(express.static(path.join("/client/build")));
