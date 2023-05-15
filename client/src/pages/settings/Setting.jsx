@@ -1,9 +1,8 @@
 import { useContext, useState } from "react";
 import Sidebar from "../../components/sidebar/Sidebar";
-import axios from "axios";
 import { Context } from "../../context/Context";
 import "./setting.css";
-import { requrl } from "../../utils/config";
+import { backend, requrl } from "../../utils/config";
 // import peace from "../../asset/images/2.jpg";
 
 const Setting = () => {
@@ -31,10 +30,10 @@ const Setting = () => {
       data.append("file", file);
       updatedUser.profilePic = filename;
       try {
-        await axios.post("/upload", data);
+        await backend.post("/upload", data);
       } catch (error) {}
       try {
-        const res = await axios.put("/users/" + user._id, updatedUser);
+        const res = await backend.put("/users/" + user._id, updatedUser);
         setSuccess(true);
         dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
       } catch (error) {

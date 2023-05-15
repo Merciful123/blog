@@ -6,8 +6,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "../../context/Context";
-import axios from "axios";
-import { requrl } from "../../utils/config";
+import { backend, requrl } from "../../utils/config";
 const SinglePost = () => {
   const location = useLocation();
   const path = location.pathname.split("/")[2];
@@ -19,7 +18,7 @@ const SinglePost = () => {
   const [updateMode, setUpdateMode] = useState(false);
   useEffect(() => {
     const getPost = async () => {
-      const res = await axios.get("/posts/" + path);
+      const res = await backend.get("/posts/" + path);
       setPost(res.data);
       setTitle(res.data.title);
       setDesc(res.data.Desc);
@@ -28,7 +27,7 @@ const SinglePost = () => {
   }, [path]);
   const handleDelete = async () => {
     try {
-      await axios.delete(`/posts/${post._id}`, {
+      await backend.delete(`/posts/${post._id}`, {
         data: { username: user.username },
       });
       window.location.replace("/");
@@ -36,7 +35,7 @@ const SinglePost = () => {
   };
   const handleUpdate = async () => {
     try {
-      await axios.put(`/posts/${post._id}`, {
+      await backend.put(`/posts/${post._id}`, {
         username: user.username,
         title,
         desc,

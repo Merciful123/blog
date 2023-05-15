@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { Context } from "../../context/Context";
 
 import axios from "axios";
+import { backend } from "../../utils/config";
 const Login = () => {
   const userRef = useRef();
   const passwordRef = useRef();
@@ -14,7 +15,7 @@ const Login = () => {
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
     try {
-      const res = await axios.post("/auth/login", {
+      const res = await backend.post("/auth/login", {
         username: userRef.current.value,
         password: passwordRef.current.value,
       });
