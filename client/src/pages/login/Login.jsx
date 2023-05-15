@@ -4,7 +4,6 @@ import { useRef } from "react";
 import { useContext } from "react";
 import { Context } from "../../context/Context";
 
-import axios from "axios";
 import { backend } from "../../utils/config";
 const Login = () => {
   const userRef = useRef();
