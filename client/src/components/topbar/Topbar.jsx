@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { Context } from "../../context/Context";
 const Topbar = () => {
   const { user, dispatch } = useContext(Context);
-  const PF = "http://localhost:5000/images/";
+  const PF = "https://mern-blog-6hv6.onrender.com/images/";
   // console.log(user)
 
   const handleLogout = () => {

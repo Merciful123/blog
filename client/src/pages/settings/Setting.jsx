@@ -13,7 +13,7 @@ const Setting = () => {
   const [success, setSuccess] = useState(false);
 
   const { user, dispatch } = useContext(Context);
-  const PF = "http://localhost:5000/api/images/";
+  const PF = "https://mern-blog-6hv6.onrender.com/api/images/";
   const handleSubmit = async (e) => {
     dispatch({ type: "UPDATE_START" });
     e.preventDefault();
